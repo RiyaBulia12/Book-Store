@@ -1,10 +1,41 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Book-Store
+"Bookstore" is an MVP website that allows you to:
+* Display a list of books.
+* Add a book.
+* Remove a selected book.
 
-## Available Scripts
+# Live Demo
+Work In Progress
 
-In the project directory, you can run:
+## Built With
+- React, HTML5, CSS3, ES6, Tailwind
+
+### Prerequisites
+
+- You need to have Code Editor Installed
+- Make sure Nodejs and NPM is installed in your system for linters and libraries
+
+### Project Setup
+
+To get a local copy up and running, follow these simple example steps.
+
+1. Clone the repo in your local machine:
+```bash
+git clone https://github.com/RiyaBulia12/Book-Store.git
+```
+2. Open terminal and cd into project and install the dependencies
+```bash
+cd Book-Store
+npm install
+```
+
+3. run the command to open the project automatically in your brower:
+```bash
+npm run build
+npm start
+```
 
 ### `npm start`
 
@@ -17,7 +48,6 @@ You may also see any lint errors in the console.
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
@@ -27,44 +57,23 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Authors
 
-### `npm run eject`
+👤 **Riya Bulia**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- GitHub: [@RiyaBulia12](https://github.com/RiyaBulia12)
+- LinkedIn: [Riya-Bulia](https://linkedin.com/in/riya-bulia)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🤝 Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Contributions, issues, and feature requests are welcome!
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Show your support
 
-## Learn More
+Give a ⭐️ if you like this project!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Acknowledgments
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Setup Project](https://github.com/microverseinc/curriculum-react-redux/blob/main/bookstore/sneak_peek_v2_0.md)
+- [Tailwind](https://tailwindcss.com/)
+- [React Tutorials](https://ibaslogic.com/react-tutorial-for-beginners/)
