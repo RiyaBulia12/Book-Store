@@ -7,10 +7,10 @@ const BookForm = () => (
     <div className="flex form-items">
       <input type="text" className="w-3/5 shadow-sm" placeholder="Book Title" />
       <select className="w-2/6 shadow-sm">
-        <option>Category</option>
-        <option>Action</option>
-        <option>Science Fiction</option>
-        <option>Economy</option>
+        <option>Author</option>
+        <option>Author 1</option>
+        <option>Author 2</option>
+        <option>Author 3</option>
       </select>
       <div className="btn">
         <button type="button" className="uppercase text-white btn-padding">Add Book</button>
