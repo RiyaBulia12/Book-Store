@@ -1,0 +1,22 @@
+.form {
+  margin: 1.813rem 0;
+}
+
+.form-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: -0.18px;
+  color: var(--warm-grey);
+  margin: 1.2rem 0;
+}
+
+.form-items {
+  gap: 2.125rem;
+}
+
+.form-items > input,
+select,
+.btn-padding {
+  padding: 0.813rem 1.063rem;
+  height: 50px;
+}

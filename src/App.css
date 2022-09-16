@@ -1,0 +1,50 @@
+.roboto {
+  font-family: 'Roboto Slab', sans-serif;
+}
+
+.center {
+  align-items: center;
+}
+
+.slate-blue {
+  color: var(--slate-blue);
+}
+
+.panel-bg {
+  padding: 1.563rem 6.25rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.813rem;
+  letter-spacing: 1.9px;
+  background-color: var(--white);
+}
+
+.logo {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: var(--azure);
+}
+
+li {
+  margin: auto 2.563rem;
+  opacity: 0.5;
+}
+
+a:active {
+  color: var(--active-link);
+}
+
+.profile {
+  align-self: center;
+}
+
+.line-2 {
+  width: 0.125rem;
+  height: 1.5rem;
+  border: solid 1px var(--off-white);
+  margin-right: 0.9rem;
+}
+
+.line-3 {
+  height: 4.5rem;
+  border: solid 1px var(--off-white);
+}
