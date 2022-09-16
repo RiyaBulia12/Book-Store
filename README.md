@@ -77,3 +77,7 @@ Give a ⭐️ if you like this project!
 - [Setup Project](https://github.com/microverseinc/curriculum-react-redux/blob/main/bookstore/sneak_peek_v2_0.md)
 - [Tailwind](https://tailwindcss.com/)
 - [React Tutorials](https://ibaslogic.com/react-tutorial-for-beginners/)
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
