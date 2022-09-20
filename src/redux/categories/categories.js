@@ -1,5 +1,6 @@
-const CHECK_STATUS = 'CHECK_STATUS';
+const CHECK_STATUS = 'bookstore/books/CHECK_STATUS';
 const initialState = [];
+
 const reducerStatus = (state = initialState, action) => {
   switch (action.type) {
     case CHECK_STATUS: {

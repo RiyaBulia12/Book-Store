@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+//automated id generator library
 import { v4 as uuidv4 } from 'uuid';
 import { addBooks } from '../redux/books/books';
 import './BookForm.css';
@@ -9,6 +10,7 @@ const BookForm = () => {
   const [author, setAuthor] = useState('');
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
+
   const addNewBook = () => {
     const newBook = {
       id: uuidv4(),
@@ -22,6 +24,9 @@ const BookForm = () => {
     setTitle('');
   };
 
+  const titleChange = (event) => setTitle(event.target.value);
+  const authorChange = (event) => setAuthor(event.target.value);
+  const categoryChange = (event) => setCategory(event.target.value);
   return (
     <div className="form">
       <h2 className="uppercase form-title">Add New Book</h2>
@@ -32,7 +37,7 @@ const BookForm = () => {
           placeholder="Book Title"
           id="bookTitle"
           value={title}
-          onChange={(event) => setTitle(event.target.value)}
+          onChange={titleChange}
         />
         <input
           type="text"
@@ -40,13 +45,13 @@ const BookForm = () => {
           placeholder="Author"
           id="author"
           value={author}
-          onChange={(event) => setAuthor(event.target.value)}
+          onChange={authorChange}
         />
         <select
           className="w-2/6 shadow-sm"
           id="categoryList"
           value={category}
-          onChange={(event) => setCategory(event.target.value)}
+          onChange={categoryChange}
         >
           <option>Category</option>
           <option>Category 1</option>
