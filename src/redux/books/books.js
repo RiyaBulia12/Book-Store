@@ -1,7 +1,26 @@
+import { v4 as uuidv4 } from 'uuid';
+
 const ADD_BOOKS = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOKS = 'bookstore/books/REMOVE_BOOKS';
 
-const initialState = [];
+const initialState = [{
+  id: uuidv4(),
+  author: 'Suzzane Collins',
+  title: 'The Hunger Game',
+  category: 'Action',
+},
+{
+  id: uuidv4(),
+  author: 'Frank Herbert',
+  title: 'Dune',
+  category: 'Science Fiction',
+},
+{
+  id: uuidv4(),
+  author: 'Suzzane Collins',
+  title: 'Capital in the Twenty-First Century',
+  category: 'Economy',
+}];
 
 const reducerBooks = (state = initialState, action) => {
   switch (action.type) {
