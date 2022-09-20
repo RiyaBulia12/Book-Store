@@ -1,11 +1,25 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { actionStatus } from './redux/categories/categories';
 
-const Categories = () => (
-  <div className="my-4 text-center">
-    <div className="btn">
-      <button type="button" className="uppercase text-white btn-padding">Check Status</button>
+const Categories = () => {
+  const dispatch = useDispatch();
+  const categoriesObj = useSelector((state) => state.status);
+
+  return (
+    <div className="my-4 text-center">
+      <div className="btn">
+        <button
+          type="button"
+          className="uppercase text-white btn-padding"
+          onClick={() => dispatch(actionStatus())}
+        >
+          Check Status
+        </button>
+      </div>
+      <span>{categoriesObj}</span>
     </div>
-  </div>
-);
+  );
+};
 
 export default Categories;
