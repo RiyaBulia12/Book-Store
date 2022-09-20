@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { actionStatus } from './redux/categories/categories';
+import { actionStatus } from '../redux/categories/categories';
 
 const Categories = () => {
   const dispatch = useDispatch();

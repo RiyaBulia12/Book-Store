@@ -2,7 +2,7 @@ import React from 'react';
 import './BookList.css';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBooks } from './redux/books/books';
+import { removeBooks } from '../redux/books/books';
 
 // destructuring { bookList }
 const BookList = ({ bookList }) => {

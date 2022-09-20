@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBooks } from './redux/books/books';
+import { addBooks } from '../redux/books/books';
 import './BookForm.css';
 
 const BookForm = () => {
