@@ -9,6 +9,7 @@ import store from './redux/configureStore';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    {/* Provider connects to the redux store to all the nested components */}
     <Provider store={store}>
       <Router>
         <App />

@@ -5,14 +5,16 @@ import { actionStatus } from '../redux/categories/categories';
 const Categories = () => {
   const dispatch = useDispatch();
   const categoriesObj = useSelector((state) => state.status);
-
+  const statusClick = () => {
+    dispatch(actionStatus());
+  };
   return (
     <div className="my-4 text-center">
       <div className="btn">
         <button
           type="button"
           className="uppercase text-white btn-padding"
-          onClick={() => dispatch(actionStatus())}
+          onClick={statusClick}
         >
           Check Status
         </button>
