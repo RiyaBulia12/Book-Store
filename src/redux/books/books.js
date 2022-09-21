@@ -62,7 +62,8 @@ const createBookSlices = createSlice({
     [fetchBooksApi.rejected]: (state, action) => action.error.message,
     [postBookApi.fulfilled]: (state, action) => [...state, action.payload],
     [postBookApi.rejected]: (state, action) => action.error.message,
-    [removeBookApi.fulfilled]: (state, action) => state.filter((item) => item.id !== action.id),
+    [removeBookApi.fulfilled]:
+    (state, action) => state.filter((item) => item.item_id !== action.meta.arg),
     [removeBookApi.rejected]: (state, action) => action.error.message,
   },
 });

@@ -10,7 +10,7 @@ const Books = () => {
 
   useEffect(() => {
     dispatch(fetchBooksApi());
-  }, [booksObj.length]);
+  }, [booksObj.length, dispatch]);
 
   return (
     <div className="flex flex-col">
