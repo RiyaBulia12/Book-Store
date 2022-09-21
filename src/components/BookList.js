@@ -2,22 +2,23 @@ import React from 'react';
 import './BookList.css';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBooks } from '../redux/books/books';
+import { removeBookApi } from '../redux/books/books';
 
-// destructuring { bookList }
+// disabling camelcase for item_id field coming from /books API
+/* eslint-disable camelcase */
 const BookList = ({ bookList }) => {
   const dispatch = useDispatch();
-  const removeClick = (event) => dispatch(removeBooks(event.target.id));
+  const removeClick = (event) => dispatch(removeBookApi(event.target.id));
 
   return (
     <div className="panel">
 
       {bookList.map((book) => {
         const {
-          id, category, title, author,
+          item_id, category, title, author,
         } = book;
         return (
-          <div className="cards bg-white shadow-xl flex flex-row mb-5" key={id}>
+          <div className="cards bg-white shadow-xl flex flex-row mb-5" key={item_id}>
 
             <div className="w-full">
               <div className="flex flex-col">
@@ -35,7 +36,7 @@ const BookList = ({ bookList }) => {
                 <button
                   type="button"
                   className="action text-sm ml-3 font-medium bg-white"
-                  id={id}
+                  id={item_id}
                   onClick={removeClick}
                 >
                   Remove

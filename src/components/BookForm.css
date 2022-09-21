@@ -20,3 +20,7 @@ select,
   padding: 0.813rem 1.063rem;
   height: 50px;
 }
+
+.error {
+  border: 2px solid #be1010;
+}

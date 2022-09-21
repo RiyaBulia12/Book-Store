@@ -1,50 +1,69 @@
 import { v4 as uuidv4 } from 'uuid';
+import axios from 'axios';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const ADD_BOOKS = 'bookstore/books/ADD_BOOK';
-const REMOVE_BOOKS = 'bookstore/books/REMOVE_BOOKS';
+const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/';
+const appId = '0W2stIPYBia997uFCq8T';
 
-const initialState = [{
-  id: uuidv4(),
-  author: 'Suzzane Collins',
-  title: 'The Hunger Game',
-  category: 'Action',
-},
-{
-  id: uuidv4(),
-  author: 'Frank Herbert',
-  title: 'Dune',
-  category: 'Science Fiction',
-},
-{
-  id: uuidv4(),
-  author: 'Suzzane Collins',
-  title: 'Capital in the Twenty-First Century',
-  category: 'Economy',
-}];
+const initialState = [];
 
-const reducerBooks = (state = initialState, action) => {
-  switch (action.type) {
-    case ADD_BOOKS:
-      // immutable state: ... create a new array from existing state
-      return [...state, action.book];
-    case REMOVE_BOOKS:
-      // immutable state: filter method does not change original array instead
-      // makes a new array with filtered item
-      return state.filter((item) => item.id !== action.id);
-    default:
-      return state;
-  }
-};
+export const fetchBooksApi = createAsyncThunk(
+  'fetchBooksApi',
+  async () => {
+    try {
+      const getBooks = await axios.get(`${baseUrl}${appId}/books`);
+      return getBooks.data;
+    } catch (error) {
+      return error?.response;
+    }
+  },
+);
 
-// Action creator
-export const addBooks = (book) => ({
-  type: ADD_BOOKS,
-  book,
+export const postBookApi = createAsyncThunk(
+  'postBooksApi',
+  async (book) => {
+    try {
+      const postBook = await axios.post(`${baseUrl}${appId}/books`, {
+        item_id: uuidv4(),
+        title: book.title,
+        author: book.author,
+        category: book.category,
+      });
+      return postBook.data;
+    } catch (error) {
+      return error?.response;
+    }
+  },
+);
+
+export const removeBookApi = createAsyncThunk(
+  'removeBookApi',
+  async (bookId) => {
+    try {
+      const removeBook = await axios.delete(`${baseUrl}${appId}/books/${bookId}`);
+      return removeBook.data;
+    } catch (error) {
+      return error?.response;
+    }
+  },
+);
+
+const createBookSlices = createSlice({
+  name: 'bookslices',
+  initialState,
+  extraReducers: {
+    [fetchBooksApi.fulfilled]: (state, action) => {
+      const books = Object.keys(action.payload).map((item) => ({
+        item_id: item,
+        ...action.payload[item][0],
+      }));
+      return books;
+    },
+    [fetchBooksApi.rejected]: (state, action) => action.error.message,
+    [postBookApi.fulfilled]: (state, action) => [...state, action.payload],
+    [postBookApi.rejected]: (state, action) => action.error.message,
+    [removeBookApi.fulfilled]: (state, action) => state.filter((item) => item.id !== action.id),
+    [removeBookApi.rejected]: (state, action) => action.error.message,
+  },
 });
-
-export const removeBooks = (id) => ({
-  type: REMOVE_BOOKS,
-  id,
-});
-
-export default reducerBooks;
+export default createBookSlices.reducer;

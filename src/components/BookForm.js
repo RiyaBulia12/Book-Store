@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 // automated id generator library
 import { v4 as uuidv4 } from 'uuid';
-import { addBooks } from '../redux/books/books';
+import { postBookApi } from '../redux/books/books';
 import './BookForm.css';
 
 const BookForm = () => {
@@ -18,7 +18,7 @@ const BookForm = () => {
       title,
       author,
     };
-    dispatch(addBooks(newBook));
+    dispatch(postBookApi(newBook));
     setAuthor('');
     setCategory('');
     setTitle('');
@@ -53,13 +53,21 @@ const BookForm = () => {
           value={category}
           onChange={categoryChange}
         >
-          <option>Category</option>
-          <option>Category 1</option>
-          <option>Category 2</option>
-          <option>Category 3</option>
+          <option>Select Category</option>
+          <option>Drama</option>
+          <option>Fiction</option>
+          <option>Action</option>
+          <option>Economy</option>
+          <option>Science Fiction</option>
         </select>
         <div className="btn">
-          <button type="button" className="uppercase text-white btn-padding" onClick={addNewBook}>Add Book</button>
+          <button
+            type="button"
+            className="uppercase text-white btn-padding"
+            onClick={addNewBook}
+          >
+            Add Book
+          </button>
         </div>
       </div>
     </div>
