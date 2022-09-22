@@ -19,7 +19,7 @@ const Categories = () => {
           Check Status
         </button>
       </div>
-      <span>{categoriesObj}</span>
+      <span className="logo">{categoriesObj}</span>
     </div>
   );
 };

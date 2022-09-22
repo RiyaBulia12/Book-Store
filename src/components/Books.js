@@ -16,7 +16,7 @@ const Books = () => {
     <div className="flex flex-col">
       {booksObj.length > 0
         ? <BookList bookList={booksObj} />
-        : <p>No books found</p>}
+        : <p className="logo text-center pt-6">No books found</p>}
       <BookForm />
     </div>
   );
