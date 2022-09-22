@@ -11,7 +11,6 @@
 }
 
 .panel-bg {
-  padding: 1.563rem 6.25rem;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.813rem;
   letter-spacing: 1.9px;
@@ -19,7 +18,7 @@
 }
 
 .logo {
-  font-size: 1.875rem;
+  /* font-size: 1.875rem; */
   font-weight: bold;
   color: var(--azure);
 }
@@ -35,6 +34,10 @@ a:active {
 
 .profile {
   align-self: center;
+}
+
+.user-icon {
+  color: var(--azure);
 }
 
 .line-2 {

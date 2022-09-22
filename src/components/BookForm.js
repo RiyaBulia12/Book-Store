@@ -12,8 +12,10 @@ const BookForm = () => {
   const [category, setCategory] = useState('');
 
   const addNewBook = () => {
+    if (!title || !category || !author) return;
+
     const newBook = {
-      id: uuidv4(),
+      item_id: uuidv4(),
       category,
       title,
       author,
@@ -30,25 +32,28 @@ const BookForm = () => {
   return (
     <div className="form">
       <h2 className="uppercase form-title">Add New Book</h2>
-      <div className="flex form-items">
+      <div className="flex form-items flex-col lg:flex-row">
         <input
+          required
           type="text"
-          className="w-3/5 shadow-sm"
+          className="lg:w-3/5 shadow-sm"
           placeholder="Book Title"
           id="bookTitle"
           value={title}
           onChange={titleChange}
         />
         <input
+          required
           type="text"
-          className="w-3/5 shadow-sm"
+          className="lg:w-3/5 shadow-sm"
           placeholder="Author"
           id="author"
           value={author}
           onChange={authorChange}
         />
         <select
-          className="w-2/6 shadow-sm"
+          required
+          className="lg:w-2/6 shadow-sm"
           id="categoryList"
           value={category}
           onChange={categoryChange}
@@ -60,7 +65,7 @@ const BookForm = () => {
           <option>Economy</option>
           <option>Science Fiction</option>
         </select>
-        <div className="btn">
+        <div className="btn m-auto">
           <button
             type="button"
             className="uppercase text-white btn-padding"
