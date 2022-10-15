@@ -7,7 +7,7 @@
 * Remove a selected book.
 
 # Live Demo
-[App Link](https://riya-cms-bookstore.netlify.app/books)
+[App Link](https://riya-cms-bookstore.netlify.app)
 
 
 ## Built With
