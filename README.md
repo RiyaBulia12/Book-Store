@@ -7,7 +7,8 @@
 * Remove a selected book.
 
 # Live Demo
-Work In Progress
+[App Link](https://riya-cms-bookstore.netlify.app/books)
+
 
 ## Built With
 - React, HTML5, CSS3, ES6, Tailwind
